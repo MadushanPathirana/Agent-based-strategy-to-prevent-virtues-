@@ -2,18 +2,21 @@ import pygame
 from pygame.locals import *
 import neat
 import sys
-import random
-import math
 from corona.Person import Person
 import os
 import configparser
 import matplotlib.pyplot as plt
 import numpy  as np
+
 pygame.font.init()
 font = pygame.font.Font('freesansbold.ttf', 32)
 
+filename = "C:\MSC_lectures\Sem_4\game_agent\Assigment\Agent-based-strategy-to-prevent-virtues-\corona\config.ini"
+
 config = configparser.ConfigParser()
-config.read('C:/MSC_lectures/Sem_4/game_agent/Assigment/corona/config.ini')
+config.read(filename)
+
+
 
 win_width= int(config.get('pygame','win_width'))
 wind_height = int(config.get('pygame','wind_height'))
@@ -194,6 +197,6 @@ def run(config_path):
 
 if __name__== "__main__":
     local_dir=os.path.dirname(__file__)
-    config_path=os.path.join(local_dir,"C:\MSC_lectures\Sem_4\game_agent\Assigment\corona\config-feedforward.txt")
+    config_path=os.path.join(local_dir,"C:\MSC_lectures\Sem_4\game_agent\Assigment\Agent-based-strategy-to-prevent-virtues-\corona\config-feedforward.txt")
     run(config_path)
     plot_summary(total_deaths_list, initial_suspected_or_infected_count_list)

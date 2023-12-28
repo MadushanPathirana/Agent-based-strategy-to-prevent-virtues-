@@ -4,9 +4,9 @@ import sys
 import random
 import math
 import configparser
-
+filename = "C:\MSC_lectures\Sem_4\game_agent\Assigment\Agent-based-strategy-to-prevent-virtues-\corona\config.ini"
 config = configparser.ConfigParser()
-config.read('C:/MSC_lectures/Sem_4/game_agent/Assigment/corona/config.ini')
+config.read(filename)
 
 wind_width= int(config.get('pygame','win_width'))
 wind_height = int(config.get('pygame','wind_height'))
